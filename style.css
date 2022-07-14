@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    background-color: lightsteelblue;
+}
+
+.header {
+    justify-content: space-between;
+    display: flex;
+    flex: 1;
+    background-color:rgb(67, 164, 255);
+    margin: 10px;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    color: white;
+    padding: 10px;
+}
+
+.content {
+    background-color:darkgrey;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .container {
+    background-color: green;
+    display: grid;
+    grid-template-columns: repeat(2, 20px);
+}
+
+.pixel {
+    background-color:antiquewhite;
+}
+

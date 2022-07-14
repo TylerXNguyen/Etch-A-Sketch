@@ -1,0 +1,6 @@
+Etch-A-Sketch Pseudocode:
+
+Display:
+Center output 16 tiles
+    Align 16 rows and columns
+
