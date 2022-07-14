@@ -1,11 +1,20 @@
-// const container = document.querySelector(".container");
-// let size = 16;
-// for (let i = 0; i < pixels; i++) {
-//     const pixel = document.createElement("p");
-//     pixel.setAttribute("id", i);
-//     pixel.textContent = i;
-//     container.appendChild(pixel);
-// }
-
-
+let size = 16;
 const container = document.querySelector(".container");
+for (let j = 0; j < size; j++) {
+    for (let i = 1; i <= size; i++) {
+        // for each row
+        const pixel = document.createElement("div");
+        pixel.classList.add("pixel");
+        pixel.setAttribute("id", i + j * 16);
+        pixel.textContent = i + j * 16;
+        container.appendChild(pixel);
+    }
+}
+
+const pixels = document.querySelectorAll(".pixel");
+pixels.forEach(pixel => {
+    pixel.addEventListener("click", function() {
+        console.log("CLICK");
+        console.log(pixel.id);
+    });
+});

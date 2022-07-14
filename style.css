@@ -29,10 +29,13 @@ body {
 .content .container {
     background-color: green;
     display: grid;
-    grid-template-columns: repeat(2, 20px);
+    justify-content: center;
+    grid-template-columns: repeat(16, 30px);
+    width: 300px;
+    height: 300px;
 }
 
 .pixel {
-    background-color:antiquewhite;
+    background-color:rgb(255, 145, 0);
 }
 
