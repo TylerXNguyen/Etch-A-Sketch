@@ -8,12 +8,12 @@ for (let j = 0; j < size; j++) {
         const pixel = document.createElement("div");
         pixel.classList.add("pixel");
         pixel.setAttribute("id", i + j * size);
-        pixel.textContent = i + j * size;
         container.appendChild(pixel);
     }
 }
 
 const pixels = document.querySelectorAll(".pixel");
+// action element for hovering over a pixel
 pixels.forEach(pixel => {
     pixel.addEventListener("mouseover", function() {
         changeRainbow(pixel.id);
@@ -23,6 +23,7 @@ pixels.forEach(pixel => {
 });
 
 function randColor() {
+    // returns a random hexadecimal color
     let color = "#"
     let hex_letters = "0123456789ABCDEF";
     for (let i = 0; i < 6; i++) {
@@ -32,6 +33,7 @@ function randColor() {
 }
 
 function changeRainbow(value_ID) {
+    // colors the ID value background by a random color
     const draw = document.getElementById(value_ID);
     draw.style.backgroundColor = randColor();
 }

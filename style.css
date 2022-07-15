@@ -24,18 +24,33 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    padding-bottom: 40px;
 }
 
 .content .container {
-    background-color: green;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(16, 30px);
-    width: 300px;
-    height: 300px;
+    grid-template-columns: repeat(16, 25px);
+    width: 700px;
+    height: 400px;
 }
 
 .pixel {
-    background-color:rgb(255, 145, 0);
+    background-color:white;
 }
 
+.preferences .container {
+    display: flex;
+    padding: 20px;
+    background-color:rgb(67, 164, 255);
+    justify-content: center;
+    gap: 50px;
+}
+
+.preferences button {
+    background-color: burlywood;
+    border-radius: 4px;
+    border: 2px solid black;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
