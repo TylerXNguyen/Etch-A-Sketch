@@ -1,4 +1,5 @@
 let size = 16; //size x size grid
+let total_pixels = size * size;
 const container = document.querySelector(".container");
 // creation of (size * size) grid total size
 for (let j = 0; j < size; j++) {
@@ -12,15 +13,29 @@ for (let j = 0; j < size; j++) {
     }
 }
 
+// checks if mousedown to draw
+var mouseDown = 0;
+document.body.onmousedown = function() { 
+    mouseDown = 1;
+}
+document.body.onmouseup = function() {
+    mouseDown = 0;
+}
 const pixels = document.querySelectorAll(".pixel");
+let colorDraw = 0; // 0 black, 1 rainbow
 // action element for hovering over a pixel
 pixels.forEach(pixel => {
     pixel.addEventListener("mouseover", function() {
-        changeRainbow(pixel.id);
-        console.log(pixel.id);
-        console.log(randColor());
+        if (mouseDown == 1) {
+            if (colorDraw == 0) {
+                changeCanvas(pixel.id, "black");
+            } else {
+                changeCanvas(pixel.id, randColor());
+            }
+        }
     });
 });
+
 
 function randColor() {
     // returns a random hexadecimal color
@@ -32,9 +47,27 @@ function randColor() {
     return color;
 }
 
-function changeRainbow(value_ID) {
-    // colors the ID value background by a random color
+function changeCanvas(value_ID, color) {
+    // colors the ID value background by black color
     const draw = document.getElementById(value_ID);
-    draw.style.backgroundColor = randColor();
+    draw.style.backgroundColor = color;
+}
+
+// black color button
+function blackBtn() {
+    colorDraw = 0;
+}
+
+// rainbow color button
+function rainbowBtn() {
+    colorDraw = 1;
+}
+
+// reset canvas button
+function resetBtn() {
+    for (let i = 1; i <= total_pixels; i++) {
+        const draw = document.getElementById(i);
+        draw.style.backgroundColor = "white";
+    }
 }
 
