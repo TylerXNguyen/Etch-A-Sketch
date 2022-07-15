@@ -14,24 +14,15 @@ for (let j = 0; j < size; j++) {
 }
 
 // checks if mousedown to draw
-var mouseDown = 0;
-document.body.onmousedown = function() { 
-    mouseDown = 1;
-}
-document.body.onmouseup = function() {
-    mouseDown = 0;
-}
 const pixels = document.querySelectorAll(".pixel");
 let colorDraw = 0; // 0 black, 1 rainbow
 // action element for hovering over a pixel
 pixels.forEach(pixel => {
     pixel.addEventListener("mouseover", function() {
-        if (mouseDown == 1) {
-            if (colorDraw == 0) {
-                changeCanvas(pixel.id, "black");
-            } else {
-                changeCanvas(pixel.id, randColor());
-            }
+        if (colorDraw == 0) {
+            changeCanvas(pixel.id, "black");
+        } else {
+            changeCanvas(pixel.id, randColor());
         }
     });
 });
